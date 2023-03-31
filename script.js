@@ -27,8 +27,14 @@ var passwordKey = {
   symbols: "!#$%&'",
 };
 
+var buildPassword = "";
+
 // Write password to the #password input
 function writePassword() {
+  var pwNum = confirm("Do you want to include Numbers?");
+  var pwUpper = confirm("Do you want to include UpperCase Letters?");
+  var pwLower = confirm("Do you want to include LowerCase Letters?");
+  var pwSymbol = confirm("Do you want to include special characters?");
   var password = generatePassword();
 
   var passwordText = document.querySelector("#password");
