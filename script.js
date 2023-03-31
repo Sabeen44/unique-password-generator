@@ -37,6 +37,9 @@ function writePassword() {
   var pwSymbol = confirm("Do you want to include special characters?");
   var password = generatePassword();
 
+
+while (buildPassword.length < pwLength) {
+    var selection = Math.floor(Math.random() * 4);
   switch (selection) {
     case 0:
       if (pwNum === true) {
