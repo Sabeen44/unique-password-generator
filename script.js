@@ -37,6 +37,50 @@ function writePassword() {
   var pwSymbol = confirm("Do you want to include special characters?");
   var password = generatePassword();
 
+  switch (selection) {
+    case 0:
+      if (pwNum === true) {
+        var secureNum =
+          passwordKey.numbers[
+            Math.floor(Math.random() * passwordKey.numbers.length)
+          ];
+
+        buildPassword = buildPassword + secureNum;
+      }
+      break;
+    case 1:
+      if (pwUpper === true) {
+        var secureUpChar =
+          passwordKey.upperCase[
+            Math.floor(Math.random() * passwordKey.upperCase.length)
+          ];
+        buildPassword = buildPassword + secureUpChar;
+      }
+      break;
+
+    case 2:
+      if (pwLower === true) {
+        var secureLowChar =
+          passwordKey.lowerCase[
+            Math.floor(Math.random() * passwordKey.lowerCase.length)
+          ];
+        buildPassword = buildPassword + secureLowChar;
+      }
+      break;
+    case 3:
+      if (pwSymbol === true) {
+        var secureSymbol =
+          passwordKey.symbols[
+            Math.floor(Math.random() * passwordKey.symbols.length)
+          ];
+        buildPassword = buildPassword + secureSymbol;
+      }
+      break;
+
+    default:
+      alert("Please pick atleast one option");
+  }
+
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
