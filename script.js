@@ -10,17 +10,27 @@
 //user recieves a unique pw
 
 //CODE SIDE
-//create list of all possible characters/numbers/symbols
+//create lists of all characters/numbers/symbols
 //button click sends a series of prompt alerts
-//choose randomly from the list according to promt answers
+//choose randomly from the lists according to promt answers
 //generate password
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+var pwLength;
+
+var passwordKey = {
+  lowerCase: "abcdefghijklmnopqrstuvwxyz",
+  upperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  numbers: "0123456789",
+  symbols: "!#$%&'",
+};
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
+
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
